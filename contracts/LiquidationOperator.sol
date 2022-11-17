@@ -171,7 +171,7 @@ contract LiquidationOperator is IUniswapV2Callee {
     IUniswapV2Factory UniswapFactory = IUniswapV2Factory(0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f);
     
     //uniswap pair
-    IUniswapV2Pair pair_WETH_USDT = IUniswapV2Pair(UniswapFactory.getPair(address(WETH_T), address(USDT_T)));
+    IUniswapV2Pair pwu = IUniswapV2Pair(UniswapFactory.getPair(address(WETH_T), address(USDT_T)));
     
     //target user
     address TU = 0x59CE4a2AC5bC3f5F225439B2993b86B42f6d3e9F;
@@ -251,7 +251,7 @@ contract LiquidationOperator is IUniswapV2Callee {
         // we should borrow USDT, liquidate the target user and get the WBTC, then swap WBTC to repay uniswap
         // (please feel free to develop other workflows as long as they liquidate the target user successfully)
         //    *** Your code here ***
-        pair_WETH_USDT.swap(0, 1600000000000, address(this), "_");
+        pwu.swap(0, 1600000000000, address(this), "_");
 
         address[] memory adr = new address[](2);
         adr[0] = address(WBTC_T);
