@@ -1,17 +1,6 @@
 ## Project Overview
-Created a smart contract using Aave V2  that preforms a flash loan based liquidation, preforming a  flash loan, a liquidation, and an asset exchange in one blockchain transaction. Making a profit of 47 eth from this transaction.
-
-
-
-### Prerequisite To Run this Project
-- You need to register an account on https://www.alchemy.com/ for access to an archive Ethereum node.
-
-- You need to prepare the nodeJS environment for the project yourself, or have [docker](https://www.docker.com/) installed on your machine.
-
-### Commands To Run this Project
-To test your contract:
-1. `docker build -t defi-mooc-lab2 .`
-2. `docker run -e ALCHE_API="$YOUR ALCHEMY ETHEREUM MAINNET API" -it defi-mooc-lab2 npm test`
+Created a smart contract in solidity using Aave V2 that performs a flash loan-based liquidation and an asset
+exchange in one blockchain transaction, making a profit of 47 ETH.
 
 ## Background on project
 
@@ -80,3 +69,12 @@ Back to liquidation, you can program the liquidation logic in the `uniswapV2Call
 ### After Liquidation
 With the flash loan, you now have enough token D. You can repay the debt for the borrowing position and claim the collateral token C. Congratulation! A successful liquidation is completed, but, wait, you still need to repay the flash loan. Remember that you need to preserve the `K`.
 
+### Prerequisite To Run this Project
+- You need to register an account on https://www.alchemy.com/ for access to an archive Ethereum node.
+
+- Have [docker](https://www.docker.com/) installed on your machine.
+
+### Commands To Run this Project
+To test your contract:
+1. `docker build -t defi-mooc-lab2 .`
+2. `docker run -e ALCHE_API="$YOUR ALCHEMY ETHEREUM MAINNET API" -it defi-mooc-lab2 npm test`
